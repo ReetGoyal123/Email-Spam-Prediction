@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spam-email-detector
+    env: python
+    repo: https://github.com/ReetGoyal123/Email-Spam-Detector
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app.py --server.port=$PORT"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
