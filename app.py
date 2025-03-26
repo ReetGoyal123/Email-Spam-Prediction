@@ -1,6 +1,6 @@
 import streamlit as st
 import pickle
-
+import os 
 
 # Load the pickled models
 tfidf = pickle.load(open("vectorizer.pkl", "rb"))
