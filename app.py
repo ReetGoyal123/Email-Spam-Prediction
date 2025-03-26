@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import os 
 
 # Load the pickled models
 tfidf = pickle.load(open("vectorizer.pkl", "rb"))
@@ -47,5 +48,7 @@ if st.button("🚀 Analyze Email"):
 st.markdown("---")
 
 # Run on port 8501 or a different port if needed
+
 if __name__ == "__main__":
-    st.run(port="0.0.0.0")
+    port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
+    app.run(host="0.0.0.0", port=port)
