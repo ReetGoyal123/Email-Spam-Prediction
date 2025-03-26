@@ -45,3 +45,7 @@ if st.button("🚀 Analyze Email"):
 
 # Footer
 st.markdown("---")
+
+# Run on port 8501 or a different port if needed
+if __name__ == "__main__":
+    st.run(port="0.0.0.0")
